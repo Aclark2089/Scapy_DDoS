@@ -9,10 +9,8 @@ filter = "tcp port 53"
 
 # Catch packet
 def process_dns(packet):
-    dns = packet[DNS]
-    if dns
-        print("Got packet\n")
-
-
+    print("Got packet---\n")
+    print(packet.summary())
+    
 # Sniff for packets based on filter
 sniff(filter=filter, prn=process_dns)
