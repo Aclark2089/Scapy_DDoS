@@ -10,7 +10,7 @@ target_server = ""
 port = 53
 
 # Build test packet to catch
-tcp_pkt = Ether(src=source_server) / IP(dst=server) / TCP(dport=port)
+tcp_pkt = Ether() / IP(dst=target_server) / TCP(dport=port)
 print("Sending test packet...\n----")
 print(tcp_pkt.summary())
 sendp(tcp_pkt)
